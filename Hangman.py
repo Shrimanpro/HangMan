@@ -52,6 +52,7 @@ while (guessed is False):
     # This will see if your guess is the actual word
     # if it is, it'll update the guessed variable  
     elif (x == secret.casefold()):
+        print("Final Word:", secret)
         print("wow, u got lucky")
         guessed = True
         
@@ -65,7 +66,7 @@ while (guessed is False):
     # if there isn't then it'll update guessed and end the loop
     if (not("_" in hangman)):
         guessed = True
-        print("Final Word:", hangman)
+        print("Final Word:", secret)
         print("Congrats you won")
 
         
