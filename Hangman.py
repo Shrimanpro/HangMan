@@ -31,11 +31,20 @@ while (guessed is False):
     '''
     if (len(x) == 1):
         letters.append(x)
-        if (x in secret.casefold()):
+        test = secret
+        if (x in test.casefold()):
+            y = 0
+            ''' I made test a copy of secret and made a int variable to keep track how many
+                times it went through
+                Since I removed letters from "test", I added y to the index for the hangman variable to match up
+                Finally to close the loop I incremented y by 1 
+            '''
+            while (x in test.casefold()):
+                index = test.casefold().index(x)
+                hangman[index + y] = test[index:index + 1]
+                test = test[0:index] + test[index + 1:len(test)]
+                y = y + 1
             print("Nice")
-            index = secret.casefold().index(x)
-            hangman[index] = secret[index:index + 1]
-            
         else:
             life -= 1
             print("Wrong")
@@ -56,6 +65,7 @@ while (guessed is False):
     # if there isn't then it'll update guessed and end the loop
     if (not("_" in hangman)):
         guessed = True
+        print("Final Word:", hangman)
         print("Congrats you won")
 
         
