@@ -2,6 +2,7 @@ from random import *
 
 
 print("Welcome to moi game. You have 5 chances to find out the secret word.");
+print("hahaha")
 
 #Makes a word list that it randomly picks from
 word_list = "Joel", "Sean", "Rishi", "Anish", "Soham", "Kshrugal", "Amogh";
